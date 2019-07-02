@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script lang="javascript">
+        function accept1() {
+            var a = f1.name.value;
+            if (!isNaN(a)) {
+                alert("Name should be character");
+            }
+            else if (a.length > 20) {
+                alert("Character should be less than 20");
+            }
+        }
+
+        function accept2() {
+            var b = f1.mobile.value.replace(/[\(\)\.\-\ ]/g, '');
+
+            if (!(b.length == 10)) {
+                alert("Mobile no should be 10 digit");
+            }
+            else if (isNaN(parseInt(b))) {
+                alert("Mobile number should be numbers");
+            }
+        }
+
+        function accept3() {
+            var c = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.value.match(c)) {
+                document.f1.email.focus();
+                return true;
+            }
+            else {
+                alert("You have entered an invalid email address!");
+                document.f1.email.focus();
+                return false;
+            }
+        }
+
+    </script>
+    <form name="f1">
+
+        <input type="text" name="name">
+        Name<br>
+        <input type="text" name="mobile">
+        Mobile No<br>
+        <input type="text" name="email">
+        Email<br>
+        <input type="Button" value="submit" onclick="accept1();accept2();accept3();">
+    </form>
+
+
+
+</body>
+
+
+</html>.
